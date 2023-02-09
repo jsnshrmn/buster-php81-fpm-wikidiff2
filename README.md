@@ -7,6 +7,10 @@ adds mediawiki-php-wikidiff2 to a buster-php81-fpm container, which I found usef
   mediawiki:
     build:
       context: https://github.com/jsnshrmn/buster-php81-fpm-wikidiff2.git
+      ## optional args
+      args:
+        image: docker-registry.wikimedia.org/dev/buster-php81-fpm:1.0.0
+        php_version: 8.1
 ```
 2. `docker compose build mediawki`
 3. `docker compose up`

@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-php_version=${1:-8.1}
+php_version=${1:-$PHP_VERSION}
 php=/usr/bin/php${php_version}
 phpize=/usr/bin/phpize${php_version}
 
 # Install deps
-tmp_pkg_list="gcc libthai-dev php${php_version}-dev pkg-config"
+tmp_pkg_list="gcc libthai-dev make php${php_version}-dev pkg-config"
 apt update
 DEBIAN_FRONTEND=noninteractive apt install -o Dpkg::Options::="--force-confold"  -y ${tmp_pkg_list} libthai0
 
